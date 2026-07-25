@@ -11,11 +11,9 @@
   <img src="https://img.shields.io/badge/license-MIT-yellow" alt="MIT License" />
 </div>
 
-<center>
-
-🔗 [**Click here for the live demo**](https://shroomcoder.github.io/ord5/)
-
-</center>
+<p align="center">
+  🔗 <a href="https://shroomcoder.github.io/ord5/"><strong>Click here for the live demo</strong></a>
+</p>
 
 ## About
 
