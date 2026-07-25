@@ -1,16 +1,16 @@
-const CACHE_NAME = 'ord5-v1';
+const CACHE_NAME = 'ord5-v2';
 const FONT_CACHE = 'ord5-fonts-v1';
 
 const PRECACHE = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/app.js',
-  '/manifest.json',
-  '/statics/ord5.ico',
-  '/statics/ord5_64.png',
-  '/statics/ord5_128.png',
-  '/statics/ord5_512.png'
+  './',
+  './index.html',
+  './style.css',
+  './app.js',
+  './manifest.json',
+  './statics/ord5.ico',
+  './statics/ord5_64.png',
+  './statics/ord5_128.png',
+  './statics/ord5_512.png'
 ];
 
 self.addEventListener('install', e => {
