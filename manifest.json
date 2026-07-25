@@ -1,0 +1,28 @@
+{
+  "name": "ord5 — Circle of Fifths",
+  "short_name": "ord5",
+  "description": "Interactive circle of fifths. Click any key.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0e0e0e",
+  "theme_color": "#0e0e0e",
+  "icons": [
+    {
+      "src": "statics/ord5_64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "statics/ord5_128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "statics/ord5_512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

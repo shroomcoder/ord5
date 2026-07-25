@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ord5</title>
+  <meta name="description" content="Circle of fifths. Click any key." />
+  <meta name="theme-color" content="#0e0e0e" />
+  <link rel="icon" href="statics/ord5.ico" />
+  <link rel="icon" href="statics/ord5_128.png" type="image/png" sizes="128x128" />
+  <link rel="apple-touch-icon" href="statics/ord5_128.png" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#circle">Skip to circle</a>
+
+  <header class="bar" role="banner">
+    <div class="bar__inner">
+      <a class="brand" href="#" aria-label="ord5 home">
+        <span class="brand__mark">ord5</span>
+        <span class="brand__sep" aria-hidden="true"></span>
+        <span class="brand__sub">CIRCLE OF FIFTHS</span>
+      </a>
+      <div class="bar__right">
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme" aria-pressed="false">
+          <span class="theme-toggle__track" aria-hidden="true">
+            <span class="theme-toggle__thumb"></span>
+          </span>
+          <span class="theme-toggle__label" id="theme-label">DARK</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app" id="main">
+    <section class="stage" aria-label="Circle of fifths">
+      <div class="controls" role="group" aria-label="Root mode">
+        <div class="segmented" role="tablist">
+          <button class="seg is-active" type="button" role="tab" data-mode="major" aria-selected="true">MAJOR</button>
+          <button class="seg" type="button" role="tab" data-mode="minor" aria-selected="false">MINOR</button>
+        </div>
+        <button class="ghost-btn" type="button" id="clear-btn" disabled aria-label="Clear selection">CLEAR</button>
+      </div>
+
+      <div class="wheel-frame">
+        <svg id="circle" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet" role="img"
+          aria-label="Circle of fifths">
+          <defs>
+            <radialGradient id="hubFill" cx="50%" cy="50%" r="60%">
+              <stop offset="0%" stop-color="var(--hub-1)" />
+              <stop offset="100%" stop-color="var(--hub-2)" />
+            </radialGradient>
+          </defs>
+          <g id="outer-wedges"></g>
+          <g id="inner-wedges"></g>
+          <circle id="hub-bg" cx="300" cy="300" r="92" />
+          <g id="hub-content">
+            <text id="hub-eyebrow" x="300" y="262" text-anchor="middle">SELECTED</text>
+            <text id="hub-root" x="300" y="312" text-anchor="middle">—</text>
+            <text id="hub-mode" x="300" y="342" text-anchor="middle">CLICK A KEY</text>
+          </g>
+        </svg>
+      </div>
+
+      <p class="stage-hint" id="stage-hint">CLICK A KEY ON THE WHEEL</p>
+    </section>
+
+    <section class="panel" aria-label="Selected key chords">
+      <header class="panel__head">
+        <div class="panel__title">
+          <span class="panel__eyebrow">CHORDS</span>
+          <span class="panel__root" id="panel-root">—</span>
+        </div>
+        <span class="panel__mode" id="panel-mode">NO KEY</span>
+      </header>
+      <ol class="chords" id="chord-list" aria-live="polite">
+        <li class="chord-row chord-row--empty">
+          <span class="chord-row__numeral">I</span>
+          <span class="chord-row__name">—</span>
+          <span class="chord-row__quality">PICK A WEDGE</span>
+        </li>
+      </ol>
+      <footer class="legend" aria-label="Chord quality legend">
+        <span class="legend__item"><span class="legend__dot legend__dot--major"></span>MAJ</span>
+        <span class="legend__item"><span class="legend__dot legend__dot--minor"></span>MIN</span>
+        <span class="legend__item"><span class="legend__dot legend__dot--dim"></span>DIM</span>
+      </footer>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+</body>
+
+</html>
