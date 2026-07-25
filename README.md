@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="statics/ord5_128.png" alt="ord5 logo" width="128" />
+  <img src="statics/ord5_512.png" alt="ord5 logo" width="128" />
   <h1>ord5</h1>
   <p>Interactive Circle of Fifths</p>
 
